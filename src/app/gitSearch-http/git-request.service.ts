@@ -22,8 +22,10 @@ export class GitRequestService {
       user: string;
       repo: string;
      }
-    const promiseUser = new Promise((resolve, reject) => {
-       this.http.get<ApiResponse>(environment.apiUrlUser, ).toPromise().then(response => {
+
+    // tslint:disable-next-line: prefer-const
+    let promiseUser = new Promise((resolve, reject) => {
+       this.http.get<ApiResponse>(environment.apiUrlUser ).toPromise().then(response => {
  this.user.user = response.user;
  resolve();
        },
@@ -33,7 +35,8 @@ export class GitRequestService {
        }
        );
      });
-    const promiseRepository = new Promise ((resolve, reject) => {
+    // tslint:disable-next-line: prefer-const
+    let promiseRepository = new Promise ((resolve, reject) => {
        this.http.get<ApiResponse>(environment.apiUrlRepository).toPromise().then(response => {
          this.repo.repository =  response.repo;
 

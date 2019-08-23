@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user-class/user';
+import { Repository } from '../repo-class/repository';
+import { GitRequestService } from '../gitSearch-http/git-request.service';
 
 
 @Component({
@@ -8,11 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitSearchParentComponent implements OnInit {
 
+  user: User;
+  repo: Repository;
 
-  constructor() { }
+  constructor(private gitrequestService: GitRequestService) {
+
+  }
 
   ngOnInit() {
-
+this.gitrequestService.detailRequest();
+this.user = this.gitrequestService.user;
+this.repo = this.gitrequestService.repo;
 
   }
 
