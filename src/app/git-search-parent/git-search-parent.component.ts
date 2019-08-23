@@ -20,7 +20,14 @@ export class GitSearchParentComponent implements OnInit {
       user: string;
       repo: string;
     }
-    //this.http.get<ApiResponse>
+    this.http.get<ApiResponse>('https://api.github.com/users').subscribe(data => {
+      // succesful api request for usernamen
+      this.user = new User (data.user);
+    });
+    this.http.get<ApiResponse>('https://api.github.com/repositories').subscribe(data => {
+      // succesful api request for repositories
+      this.repo = new Repository(data.repo);
+    });
   }
 
 }
