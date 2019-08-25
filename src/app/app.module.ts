@@ -7,13 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormComponent } from './form/form.component';
 import { HttpClientModule} from '@angular/common/http';
 import { GitSearchParentComponent } from './git-search-parent/git-search-parent.component';
+import { SearcComponent } from './search-user/searc/searc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FormComponent,
-    GitSearchParentComponent
+    GitSearchParentComponent,
+    SearcComponent
   ],
   imports: [
     BrowserModule,

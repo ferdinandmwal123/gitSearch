@@ -11,7 +11,7 @@ import { GitRequestService } from '../gitSearch-http/git-request.service';
 })
 export class GitSearchParentComponent implements OnInit {
 
-  user: User;
+  login: User;
   repo: Repository;
 
   constructor(private gitrequestService: GitRequestService) {
@@ -19,10 +19,10 @@ export class GitSearchParentComponent implements OnInit {
   }
 
   ngOnInit() {
-this.gitrequestService.detailRequest();
-this.user = this.gitrequestService.user;
-this.repo = this.gitrequestService.repo;
-
+ this.gitrequestService.detailRequest();
+ this.login = this.gitrequestService.user;
+ this.repo = this.gitrequestService.repo;
+ 
   }
 
 }
