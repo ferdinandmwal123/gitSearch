@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-searc',
@@ -6,12 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./searc.component.css']
 })
 export class SearcComponent implements OnInit {
-searchIt:string;
-@Output() emitSearch = new EventEmitter<any>()
+
   constructor() { }
-search (){
-  this.emitSearch.emit(this.searchIt);
-}
+
   ngOnInit() {
   }
 

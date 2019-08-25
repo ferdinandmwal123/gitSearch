@@ -62,7 +62,7 @@ resolve();
     }
 
     const promiseUser = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + this.apiKey ).toPromise()
+      this.http.get<ApiResponse>(environment.apiUrlUser + this.userName + '/repos?access_token' + environment.apiKey).toPromise()
       .then(response => {
         this.repo.repo = response;
       }, error => {

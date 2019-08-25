@@ -14,15 +14,19 @@ export class GitSearchParentComponent implements OnInit {
   login: User;
   repo: Repository;
 
-  constructor(private gitrequestService: GitRequestService) {
+  constructor(public gitrequestService: GitRequestService, public httpService: GitRequestService) {
 
   }
+
 
   ngOnInit() {
  this.gitrequestService.detailRequest();
  this.login = this.gitrequestService.user;
  this.repo = this.gitrequestService.repo;
 
+  }
+  detailRequest(searchIt){
+    console.log(searchIt);
   }
 
 }
