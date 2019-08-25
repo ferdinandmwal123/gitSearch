@@ -33,7 +33,7 @@ export class GitRequestService {
       followers: number;
       following: number;
      }
-    let promiseUser = new Promise((resolve, reject) => {
+    const promiseUser = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrlUser + this.userName + '?access_token=' + this.apiKey).toPromise().then(response => {
 this.user.login = response.login;
 this.user.avatar_url = response.avatar_url;
@@ -60,7 +60,7 @@ resolve();
       description: string;
     }
 
-    let promiseUser = new Promise((resolve, reject) => {
+    const promiseUser = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrlUser + this.userName + '/repos?access_token' + environment.apiKey).toPromise()
       .then(response => {
         this.repo.repo = response;
@@ -68,7 +68,7 @@ resolve();
         reject (error);
       });
     });
-    return promiseUser
+    return promiseUser;
   }
 
   getUsernamen(username: string) {
