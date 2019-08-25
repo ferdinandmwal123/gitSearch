@@ -34,7 +34,8 @@ export class GitRequestService {
       following: number;
      }
     const promiseUser = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey).toPromise().then(response => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey).toPromise()
+      .then(response => {
 this.user.login = response.login;
 this.user.avatar_url = response.avatar_url;
 this.user.html_url = response.html_url;
