@@ -11,7 +11,7 @@ import { promise } from 'protractor';
 })
 export class GitRequestService {
 
-  user: User;
+   user: User;
   repo: Repository;
   private userName: string;
 
@@ -23,38 +23,40 @@ export class GitRequestService {
     this.repo = new Repository ('', '', '');
     this.userName = 'ferdinandmwal123';
   }
-  detailRequest() {
+  searchaUser() {
 
     interface ApiResponse {
-      login: string;
+       login: string;
       avatar_url: string;
       html_url: string;
       name: string;
       public_repos: number;
       followers: number;
       following: number;
+
      }
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey).toPromise()
-      .then(res => {
-this.user.login = res.login;
-this.user.avatar_url = res.avatar_url;
-this.user.html_url = res.html_url;
-this.user.name = res.name;
-this.user.followers = res.followers;
-this.user.following = res.following;
-this.user.public_repos = res.public_repos;
+      .then(results => {
+this.user.login = results.login;
+this.user.avatar_url = results.avatar_url;
+this.user.html_url = results.html_url;
+this.user.name = results.name;
+this.user.followers = results.followers;
+this.user.following = results.following;
+this.user.public_repos = results.public_repos;
+
 resolve();
       },
-      error => {
-        // this.login.login = 'ferdinandmwal123';
-        reject(error);
+      error => { 
+                 this.user.login = 'ferdinandmwal123';
+                 reject(error);
     });
   });
     return promise;
   }
 
-   getRepos(username) {
+    getRepos(username) {
 
     interface ApiResponse {
       name: string;
@@ -62,7 +64,7 @@ resolve();
       description: string;
     }
 
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + this.apiKey).toPromise()
       .then(res => {
         this.repo.repo = res;
@@ -75,34 +77,11 @@ resolve();
 
    getUsername(username: string) {
     this.userName = username;
-  }
 
-   /*  this.login = new User ('');
-    this.repo = new Repository('');
   }
 
 
-    // tslint:disable-next-line: prefer-const
-
-       }
-       );
-     });
-    // tslint:disable-next-line: prefer-const
-
-
-         resolve();
-       }, error => {
-         this.repo.repository = 'Quotes';
-
-         reject(error);
-         return promiseRepository;
-       });
-
-     });
-    return promiseLogin;
-
-  } */
-
+  
 
 
 }

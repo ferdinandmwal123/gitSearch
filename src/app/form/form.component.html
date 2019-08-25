@@ -1,12 +1,11 @@
-<form class="col-md-6">
-    <div class="form-group">
-        <label for="userName">GitHub username</label>
-        <input type="text" class="form-control" id="userName" placeholder="Input the github username " [(ngModel)]="username"  name="username">
-        <small class="form-text text-muted">Or repository name</small>
-    </div>
- 
-</form>
-
-
-
-
+<div>
+        <div class="card">
+          <div class="card-body">
+            <form class="form-inline">
+              <input type="text" class="form-control" placeholder="Search" name="searchIt" [(ngModel)]="searchIt">
+              <button class="btn btn-info" (click) = "search()">Search!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      

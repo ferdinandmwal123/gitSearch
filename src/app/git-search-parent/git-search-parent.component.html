@@ -1,33 +1,34 @@
 <app-navbar></app-navbar>
-<div class="col-md-6">
- 
-<div class="col-md-6">
-<app-form ></app-form>
-<div *ngIf="searchUsers" class="main-card">
-    <div class="avi-panel to-left">
-      <img src="{{login.avatar_url}}" alt="avatar">
-      <a href="{{login.html_url}}" target="_blank"><button>Go to Profile </button></a>
+<div class="form form-control">
+  <app-form></app-form>
+</div>
+  
+  <div *ngIf="searchUsers" class="container">
+    <div class="">
+      <img src="{{login.avatar_url}}" alt="avatar" class="avatar">
+      <a href="{{login.html_url}}" class="btn btn1" target="_blank"><button>Go to Profile </button></a>
     </div>
-
-</div>
-<div class="details to-right">
-    <h3>{{login.name}}</h3>
-    <p>Followers<br><span>{{login.followers}}</span></p>
-    <p>Following<br><span>{{login.following}}</span></p>
-    <p>Repositories<br><span>{{login.public_repos}}</span></p>
-</div>
-
-</div>
-
-<div *ngIf="!searchUsers">
-<div class="container repo-row">
-  <div *ngFor="let rep of repo" class="some-card">
-    <a href="{{rep.html_url}}" target="_blank">
-        <h3>{{rep.name}}</h3>
-        <p>{{rep.description}}</p>
-    </a>
+    <div class="details to-right">
+        <h3>{{login.name}}</h3>
+        <p>Followers<br><span>{{login.followers}}</span></p>
+        <p>Following<br><span>{{login.following}}</span></p>
+        <p>Repositories<br><span>{{login.public_repos}}</span></p>
+    </div>
     
   </div>
   
-</div>
-</div>
+  <div *ngIf="!searchUsers">
+    <div class="container repo-row">
+      <div *ngFor="let rep of repo" class="some-card">
+        <a href="{{rep.html_url}}" target="_blank">
+            <h3>{{rep.name}}</h3>
+            <p>{{rep.description}}</p>
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  

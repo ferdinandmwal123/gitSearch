@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { HttpClientModule} from '@angular/common/http';
 import { GitSearchParentComponent } from './git-search-parent/git-search-parent.component';
 import { SearcComponent } from './search-user/searc/searc.component';
+import { UserDirective } from './user.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearcComponent } from './search-user/searc/searc.component';
     NavbarComponent,
     FormComponent,
     GitSearchParentComponent,
-    SearcComponent
+    SearcComponent,
+    UserDirective
   ],
   imports: [
     BrowserModule,

@@ -11,17 +11,17 @@ import { GitRequestService } from '../gitSearch-http/git-request.service';
 })
 export class GitSearchParentComponent implements OnInit {
 
-  searchUsers = true;
+    searchUsers = true;
   login: User;
   repo: Repository;
-  username:string;
+   username:string; 
 
   constructor(public gitrequestService: GitRequestService, ) {
 
   }
-  getProfile(){
+   getProfile(){
     this.gitrequestService.getUsername(this.username);
-    this.gitrequestService.detailRequest();
+    this.gitrequestService.searchaUser();
     this.login=this.gitrequestService.user;
 
     this.gitrequestService.getRepos(this.username);
@@ -32,16 +32,18 @@ export class GitSearchParentComponent implements OnInit {
   notSearch(){
     this.searchUsers = !this.searchUsers;
   }
-
+ 
 
   ngOnInit() {
- this.gitrequestService.detailRequest();
+  
+ this.gitrequestService.searchaUser();
  this.login = this.gitrequestService.user;
 
- this.gitrequestService.getRepos(this.username);
- this.repo = this.gitrequestService.repo;
+ this.gitrequestService.getRepos(this.username)
+ this.repo = this.gitrequestService.repo; 
 
   }
+  
  
 
 }
