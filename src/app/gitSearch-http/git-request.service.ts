@@ -24,6 +24,7 @@ export class GitRequestService {
     this.userName = 'ferdinandmwal123';
   }
   detailRequest() {
+
     interface ApiResponse {
       login: string;
       avatar_url: string;
@@ -33,16 +34,16 @@ export class GitRequestService {
       followers: number;
       following: number;
      }
-    const promiseUser = new Promise((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey).toPromise()
-      .then(response => {
-this.user.login = response.login;
-this.user.avatar_url = response.avatar_url;
-this.user.html_url = response.html_url;
-this.user.name = response.name;
-this.user.followers = response.followers;
-this.user.following = response.following;
-this.user.public_repos = response.public_repos;
+      .then(res => {
+this.user.login = res.login;
+this.user.avatar_url = res.avatar_url;
+this.user.html_url = res.html_url;
+this.user.name = res.name;
+this.user.followers = res.followers;
+this.user.following = res.following;
+this.user.public_repos = res.public_repos;
 resolve();
       },
       error => {
@@ -50,10 +51,10 @@ resolve();
         reject(error);
     });
   });
-    return promiseUser;
+    return promise;
   }
 
-  getRepos(username) {
+   getRepos(username) {
 
     interface ApiResponse {
       name: string;
@@ -61,18 +62,18 @@ resolve();
       description: string;
     }
 
-    const promiseUser = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrlUser + this.userName + '/repos?access_token' + environment.apiKey).toPromise()
-      .then(response => {
-        this.repo.repo = response;
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + this.apiKey).toPromise()
+      .then(res => {
+        this.repo.repo = res;
       }, error => {
         reject (error);
       });
     });
-    return promiseUser;
+    return promise;
   }
 
-  getUsernamen(username: string) {
+   getUsername(username: string) {
     this.userName = username;
   }
 
