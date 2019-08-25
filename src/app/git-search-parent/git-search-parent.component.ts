@@ -22,7 +22,7 @@ export class GitSearchParentComponent implements OnInit {
  this.gitrequestService.detailRequest();
  this.login = this.gitrequestService.user;
  this.repo = this.gitrequestService.repo;
- 
+
   }
 
 }
