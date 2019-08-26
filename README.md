@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Author 
+
+Ferdinand Mwalagho
+
+##Behaviour Driven Development
+
+Behaviour:	Input	Output
+User types the GitHUb username	ferdinandmwal123	ferdinandmwal123, profile and github repositories
+Setup/Installation Requirements
+Connect to the internet on your preferred browser
+Open the link : https://github.com/ferdinandmwal123/gitSearch
+Finally ,either clone the repository or download the zip file
+##Known Bugs
+

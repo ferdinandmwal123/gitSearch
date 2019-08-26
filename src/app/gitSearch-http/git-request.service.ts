@@ -21,9 +21,9 @@ export class GitRequestService {
   constructor(private http: HttpClient) {
     this.user = new User ('', '', '', '', 0, 0, 0);
     this.repo = new Repository ('', '', '');
-    this.userName = 'ferdinandmwal123';
+    this.userName = 'Nathan-Kimutai';
   }
-  searchaUser() {
+  getUser() {
 
     interface ApiResponse {
        login: string;
@@ -37,18 +37,18 @@ export class GitRequestService {
      }
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey).toPromise()
-      .then(results => {
-this.user.login = results.login;
-this.user.avatar_url = results.avatar_url;
-this.user.html_url = results.html_url;
-this.user.name = results.name;
-this.user.followers = results.followers;
-this.user.following = results.following;
-this.user.public_repos = results.public_repos;
+      .then(res => {
+this.user.login = res.login;
+this.user.avatar_url = res.avatar_url;
+this.user.html_url = res.html_url;
+this.user.name = res.name;
+this.user.followers = res.followers;
+this.user.following = res.following;
+this.user.public_repos = res.public_repos;
 
 resolve();
       },
-      error => { 
+      error => {
                  this.user.login = 'ferdinandmwal123';
                  reject(error);
     });
@@ -80,8 +80,6 @@ resolve();
 
   }
 
-
-  
 
 
 }

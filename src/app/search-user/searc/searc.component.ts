@@ -9,12 +9,12 @@ export class SearcComponent implements OnInit {
  /* @Output()emitSearch = new EventEmitter<any>()
   searchIt: string;  */
   constructor() { }
-/* 
+/*
    search() {
     this.emitSearch.emit(this.searchIt);
    // console.log(this.searchIt);
-  } */ 
-  
+  } */
+
 
   ngOnInit() {
   }

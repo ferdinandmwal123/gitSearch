@@ -14,36 +14,36 @@ export class GitSearchParentComponent implements OnInit {
     searchUsers = true;
   login: User;
   repo: Repository;
-   username:string; 
+   username: string;
 
   constructor(public gitrequestService: GitRequestService, ) {
 
   }
-   getProfile(){
+   /* getProfile() {
     this.gitrequestService.getUsername(this.username);
-    this.gitrequestService.searchaUser();
+    this.gitrequestService.getUser();
     this.login=this.gitrequestService.user;
 
     this.gitrequestService.getRepos(this.username);
     this.repo = this.gitrequestService.repo;
     console.log(this.repo);
-  }
+  } */
 
-  notSearch(){
+  /* notSearch(){
     this.searchUsers = !this.searchUsers;
   }
- 
+  */
 
   ngOnInit() {
-  
- this.gitrequestService.searchaUser();
+
+ this.gitrequestService.getUser();
  this.login = this.gitrequestService.user;
 
- this.gitrequestService.getRepos(this.username)
- this.repo = this.gitrequestService.repo; 
+ this.gitrequestService.getRepos(this.username);
+ this.repo = this.gitrequestService.repo;
 
   }
-  
- 
+
+
 
 }
