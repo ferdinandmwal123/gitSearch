@@ -9,6 +9,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { GitSearchParentComponent } from './git-search-parent/git-search-parent.component';
 import { SearcComponent } from './search-user/searc/searc.component';
 import { UserDirective } from './user.directive';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserDirective } from './user.directive';
     FormComponent,
     GitSearchParentComponent,
     SearcComponent,
-    UserDirective
+    UserDirective,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

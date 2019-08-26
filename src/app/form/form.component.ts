@@ -10,20 +10,22 @@ import { Repository } from '../repo-class/repository';
 })
 export class FormComponent implements OnInit {
 searchUsers = true;
-user:User;
-repo:Repository;
-username:string;
-  constructor(public gitrequestService: GitRequestService) { }
+user: User;
+repo: Repository;
+username: string;
+  constructor(public gitrequestService: GitRequestService) {
+  }
 
-  getProfile(){
-    this.gitrequestService.getUsername(this.username);
+  getProfile() {
+     this.gitrequestService.getUsername(this.username);
 
-    this.gitrequestService.getUser();
-    this.user = this.gitrequestService.user;
+     this.gitrequestService.getUser();
+     this.user = this.gitrequestService.user;
 
-    this.gitrequestService.getRepos(this.username);
-    this.repo = this.gitrequestService.repo;
-    console.log(this.repo);
+     this.gitrequestService.getRepos(this.username);
+     this.repo = this.gitrequestService.repo;
+     console.log(this.username);
+
   }
   switchSearch() {
     this.searchUsers = !this.searchUsers;
