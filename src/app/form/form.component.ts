@@ -17,7 +17,7 @@ username: string;
   }
 
   getProfile() {
-     this.gitrequestService.getUsername(this.username);
+     this.gitrequestService.setUsername(this.username);
 
      this.gitrequestService.getUser();
      this.user = this.gitrequestService.user;

@@ -2,7 +2,7 @@
         <div class="card">
           <div class="card-body">
             <form class="form-inline">
-              <input type="text" class="form-control" placeholder="Search" name="username" (keyup)="getProfile()">
+              <input type="text" class="form-control" placeholder="Search" name="username" (keyup)="getProfile()" [(ngModel)]="username">
               <!-- <button class="btn btn-info" ">Search!</button>  -->
             </form>
           </div>

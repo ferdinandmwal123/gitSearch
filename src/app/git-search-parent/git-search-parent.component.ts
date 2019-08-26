@@ -20,7 +20,7 @@ export class GitSearchParentComponent implements OnInit {
 
   }
     getProfile() {
-    this.gitrequestService.getUsername(this.username);
+    this.gitrequestService.setUsername(this.username);
     this.gitrequestService.getUser();
     this.login = this.gitrequestService.user;
 

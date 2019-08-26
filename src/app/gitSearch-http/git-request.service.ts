@@ -55,7 +55,7 @@ resolve();
   });
     return promise;
   }
-
+ 
 
     getRepos(username) {
 
@@ -76,7 +76,7 @@ resolve();
     return promise;
   }
 
-   getUsername(username: string) {
+   setUsername(username: string) {
     this.userName = username;
 
   }
