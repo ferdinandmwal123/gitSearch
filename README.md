@@ -30,13 +30,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Ferdinand Mwalagho
 
-##Behaviour Driven Development
+## Description
+
+An app that enables a user to search fo a github user, the users details are displayed and a link to his profiles is provided
+
+## Behaviour Driven Development
 
 Behaviour:	Input	Output
 User types the GitHUb username	ferdinandmwal123	ferdinandmwal123, profile and github repositories
-Setup/Installation Requirements
+
+## Setup/Installation Requirements
 Connect to the internet on your preferred browser
 Open the link : https://github.com/ferdinandmwal123/gitSearch
 Finally ,either clone the repository or download the zip file
-##Known Bugs
+## Known Bugs
+
+## Live site
+https://ferdinandmwal123.github.io/gitSearch/
+
 
