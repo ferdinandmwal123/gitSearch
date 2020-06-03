@@ -21,7 +21,7 @@ export class GitRequestService {
   constructor(private http: HttpClient) {
     this.user = new User ('', '', '', '', 0, 0, 0);
     this.repo = new Repository ('', '', '');
-    this.userName = 'Nathan-Kimutai';
+    this.userName = 'ferdinandmwal123';
   }
   getUser() {
 
